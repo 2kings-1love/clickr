@@ -1,0 +1,7 @@
+# robots.txt for https://getclickr.app
+# SAFEST: blocks all crawlers (search engines and most research crawlers).
+# Note: robots.txt is advisory — malicious scrapers may ignore it.
+User-agent: *
+Disallow: /
+
+# Sitemap: https://getclickr.app/sitemap.xml

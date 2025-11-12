@@ -1,0 +1,13 @@
+name = "getclickr-robots"
+main = "index.js"
+compatibility_date = "2025-11-12"
+
+# For testing set workers_dev = true and omit routes
+# For production, set workers_dev = false and add account_id and optionally routes.
+workers_dev = true
+
+# Replace with your Cloudflare account ID if you want wrangler to create routes automatically:
+# account_id = "YOUR_ACCOUNT_ID"
+
+# Optional production route (uncomment if you set account_id)
+# routes = ["getclickr.app/robots.txt"]
