@@ -2,12 +2,14 @@ name = "getclickr-robots"
 main = "index.js"
 compatibility_date = "2025-11-12"
 
-# For testing set workers_dev = true and omit routes
-# For production, set workers_dev = false and add account_id and optionally routes.
-workers_dev = true
+# For production, set workers_dev = false and add account_id and routes.
+workers_dev = false
 
-# Replace with your Cloudflare account ID if you want wrangler to create routes automatically:
-# account_id = "YOUR_ACCOUNT_ID"
+# Cloudflare account ID for 19segura83@gmail.com's Account
+account_id = "89344a2f60b64a1465f5a6aa88a93f7d"
 
-# Optional production route (uncomment if you set account_id)
-# routes = ["getclickr.app/robots.txt"]
+# Route to bind the Worker to the production domain
+routes = ["getclickr.app/robots.txt"]
+
+# Note: run 'wrangler publish' locally or via CI with an authenticated Cloudflare account that
+# has permissions to manage Workers and routes for the getclickr.app zone.
