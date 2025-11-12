@@ -11,9 +11,15 @@ Disallow: /
 # Sitemap: https://getclickr.app/sitemap.xml
 `
 
-async function handle(request) {
-  const url = new URL(request.url)
-  if (url.pathname === '/robots.txt') {
+function handle(request) {
+  // Quick path check without full URL parsing for performance
+  // Extract pathname efficiently from the URL string
+  const url = request.url
+  const pathStart = url.indexOf('/', url.indexOf('://') + 3)
+  const pathEnd = url.indexOf('?', pathStart)
+  const pathname = pathEnd === -1 ? url.slice(pathStart) : url.slice(pathStart, pathEnd)
+  
+  if (pathname === '/robots.txt') {
     return new Response(ROBOTS, {
       status: 200,
       headers: {
